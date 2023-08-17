@@ -1,7 +1,13 @@
 {
-    "name": "ainc-bootcamp-template",
-    "files": [
-      "template",
-      "template.json"
-    ]
+  "name": "ainc-bootcamp-template",
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  }
 }
