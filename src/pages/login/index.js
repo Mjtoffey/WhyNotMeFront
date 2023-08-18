@@ -17,7 +17,7 @@ function Page() {
         e.preventDefault();
         // console.log(email.current.value , password.current.value , "HERE")
         authService
-            .login(email, password, userType)
+            .login(email, password)
             .then(async (resp) => {
                 console.log(resp)
                 let data = jwtDecode(resp.access)
@@ -68,18 +68,6 @@ function Page() {
                             value="Sign in"
                         />
                     </div>
-                    <div className='flex justify-between m-2 items-center space-x-2'>
-                        <label htmlFor="userType">User Type:</label>
-                        <select
-                            id="userType"
-                            name="userType"
-                            onChange={(e) => setUserType(e.target.value)}
-                            required
-                        >
-                            <option value="athlete">Athlete</option>
-                            <option value="recruiter">Recruiter</option>
-                        </select>
-                        </div>
                 </form>
             </div>
         </div>

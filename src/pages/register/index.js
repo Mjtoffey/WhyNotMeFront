@@ -85,6 +85,18 @@ function Register() {
               onChange={(e) => handleChange("passwordConf", e.target.value)}
             />
           </div>
+          <div className='flex justify-between m-2 items-center space-x-2'>
+            <label htmlFor="userType">User Type:</label>
+            <select
+                id="userType"
+                name="userType"
+                onChange={(e) => setUserType(e.target.value)}
+                required
+            >
+                <option value="athlete">Athlete</option>
+                <option value="recruiter">Recruiter</option>
+            </select>
+            </div>
           <div className="flex">
             <input
               type="submit"
