@@ -19,6 +19,7 @@ import {
           data: {
             email,
             password,
+            userType,
           },
         });
   
