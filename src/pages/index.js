@@ -1,8 +1,4 @@
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
-import React, { useState } from 'react'
-import Navbar from '../components/Navbar'
-import Header from '../../components/Header';
 
 export default function Page() {
     return <div>
