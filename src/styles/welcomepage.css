@@ -1,0 +1,29 @@
+.contianer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 30px;
+    text-align: center;
+}
+
+.sButton {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    justify-content: center;
+    margin-left: 125px;
+    margin-right: 175px;
+}
+
+.lButton {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-left: 175px;
+    margin-right: 125px;
+    justify-content: center;
+}
