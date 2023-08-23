@@ -90,6 +90,29 @@ function Register() {
             />
           </div>
           <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="school">School:</label><br></br>
+            <input
+              className="border"
+              type="school"
+              id="school"
+              required
+              onChange={(e) => handleChange("school", e.target.value)}
+            />
+          </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="sport">Sport:</label>
+            <select
+              id="sport"
+              name="sport"
+              onChange={(e) => handleChange("sport", e.target.value)}
+              value={user.sport}
+              required
+            >
+              <option value="soccer">Soccer</option>
+              <option value="basketball">Basketball</option>
+            </select>
+            </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
             <label htmlFor="password">Password:</label><br></br>
             <input
               className="border"
