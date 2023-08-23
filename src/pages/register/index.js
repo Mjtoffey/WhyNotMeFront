@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AuthService from "../../services/auth.service";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { useGlobalState } from "../../context/GlobalState";
 
 function Register() {
@@ -12,6 +12,7 @@ function Register() {
     firstName: "",
     lastName: "",
     email: "",
+    userType: "athlete", // Default user type
   });
 
   const handleChange = (key, value) => {
@@ -35,68 +36,20 @@ function Register() {
     <div className="w-screen h-screen">
       <div className="flex">
         <form className="mx-auto border-2 bg-mtgray" onSubmit={handleRegister}>
+          {/* ...other input fields... */}
           <div className="flex justify-between m-2 items-center space-x-2">
-            <label htmlFor="firstName">First Name:</label>
-            <input
-              className="border"
-              type="text"
-              id="firstName"
-              required
-              onChange={(e) => handleChange("firstName", e.target.value)}
-            />
-          </div>
-          <div className="flex justify-between m-2 items-center space-x-2">
-            <label htmlFor="lastName">Last Name:</label>
-            <input
-              className="border"
-              type="text"
-              id="lastName"
-              required
-              onChange={(e) => handleChange("lastName", e.target.value)}
-            />
-          </div>
-          <div className="flex justify-between m-2 items-center space-x-2">
-            <label htmlFor="email">Email:</label>
-            <input
-              className="border"
-              type="text"
-              id="email"
-              required
-              onChange={(e) => handleChange("email", e.target.value)}
-            />
-          </div>
-          <div className="flex justify-between m-2 items-center space-x-2">
-            <label htmlFor="password">Password:</label>
-            <input
-              className="border"
-              type="text"
-              id="password"
-              required
-              onChange={(e) => handleChange("password", e.target.value)}
-            />
-          </div>
-          <div className="flex justify-between m-2 items-center space-x-2">
-            <label htmlFor="passwordConf">Confirm Password:</label>
-            <input
-              className="border"
-              type="text"
-              id="passwordConf"
-              required
-              onChange={(e) => handleChange("passwordConf", e.target.value)}
-            />
-          </div>
-          <div className='flex justify-between m-2 items-center space-x-2'>
             <label htmlFor="userType">User Type:</label>
             <select
-                id="userType"
-                name="userType"
-                onChange={(e) => setUserType(e.target.value)}
-                required
+              id="userType"
+              name="userType"
+              onChange={(e) => handleChange("userType", e.target.value)}
+              value={user.userType}
+              required
             >
-                <option value="athlete">Athlete</option>
-                <option value="recruiter">Recruiter</option>
+              <option value="athlete">Athlete</option>
+              <option value="recruiter">Recruiter</option>
             </select>
-            </div>
+          </div>
           <div className="flex">
             <input
               type="submit"

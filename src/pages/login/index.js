@@ -58,19 +58,7 @@ function Page() {
                             name="email"
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                        />
-                        
-                        {/* <div className='flex justify-between m-2 items-center space-x-2'>
-                        <label htmlFor="usernamel">Username:</label><br></br>
-                        <input
-                            className='border'
-                            type="text"
-                            id="username"
-                            name="username"
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                        /> */}
-                        
+                        />                        
                     
                     </div>
                     <div className='flex justify-between m-2 items-center space-x-2'>
