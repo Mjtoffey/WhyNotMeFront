@@ -6,7 +6,7 @@ import Link from "next/link";
 import jwtDecode from "jwt-decode";
 
 function Register() {
-  const {state, dispatch} = useGlobalState();
+  const { state, dispatch } = useGlobalState();
   const router = useRouter();
   const [user, setUser] = useState({
     password: "",
@@ -27,7 +27,7 @@ function Register() {
   async function handleRegister(e) {
     console.log(e);
     e.preventDefault();
-    user.username=user.email;
+    user.username = user.email;
     authService.register(user);
     dispatch({
       currentUserToken: state.currentUserToken,
@@ -111,7 +111,27 @@ function Register() {
               <option value="soccer">Soccer</option>
               <option value="basketball">Basketball</option>
             </select>
-            </div>
+          </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="phone number">Phone Number:</label><br></br>
+            <input
+              className="border"
+              type="phone number"
+              id="phone number"
+              required
+              onChange={(e) => handleChange("phone number", e.target.value)}
+            />
+          </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="social media">Social Media User Name:</label><br></br>
+            <input
+              className="border"
+              type="social media"
+              id="social media"
+              required
+              onChange={(e) => handleChange("social media", e.target.value)}
+            />
+          </div>
           <div className="flex justify-between m-2 items-center space-x-2">
             <label htmlFor="password">Password:</label><br></br>
             <input
@@ -139,11 +159,11 @@ function Register() {
               className="bg-mtpurple text-white py-2 px-4 rounded-lg mx-auto my-2 font-bold disabled:opacity-60"
               disabled={
                 user.password &&
-                user.password.length >= 8 &&
-                user.password === user.passwordConf &&
-                user.firstName &&
-                user.lastName &&
-                user.email
+                  user.password.length >= 8 &&
+                  user.password === user.passwordConf &&
+                  user.firstName &&
+                  user.lastName &&
+                  user.email
                   ? false
                   : true
               }
