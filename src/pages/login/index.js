@@ -2,9 +2,7 @@ import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { useGlobalState } from '../../context/GlobalState';
 import authService from '../../services/auth.service';
-import Navbar from '../../components/navbar';
 import jwtDecode from 'jwt-decode';
-import styles from './login.module.css';
 import Link from 'next/link';
 
 function Page() {
@@ -41,8 +39,7 @@ function Page() {
 
     return (
         <div>
-           <Navbar />
-            <div className={styles.container}>
+            <div>
             <h1>Login</h1>
             <div className='flex'>
                 <form
@@ -75,13 +72,12 @@ function Page() {
                     </div>
                     <div className='flex'>
                         <input
-                            className={styles.button}
                             type="submit"
                             value="Sign in"
                         />
                     </div>
                 </form>
-                <Link href="/register" classname={styles.link}>
+                <Link href="/register">
             Register Here
           </Link>
             </div>

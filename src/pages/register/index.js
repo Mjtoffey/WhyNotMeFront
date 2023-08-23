@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import AuthService from "../../services/auth.service";
+import React, { useEffect, useState } from "react";
+import authService from "../../services/auth.service";
 import { useRouter } from "next/router";
 import { useGlobalState } from "../../context/GlobalState";
+import Link from "next/link";
+import jwtDecode from "jwt-decode";
 
 function Register() {
-  const [state, dispatch] = useGlobalState();
+  const {state, dispatch} = useGlobalState();
   const router = useRouter();
   const [user, setUser] = useState({
     password: "",
@@ -23,8 +25,10 @@ function Register() {
   };
 
   async function handleRegister(e) {
+    console.log(e);
     e.preventDefault();
-    AuthService.register(user);
+    user.username=user.email;
+    authService.register(user);
     dispatch({
       currentUserToken: state.currentUserToken,
       currentUser: state.currentUser?.user_id,
@@ -49,6 +53,61 @@ function Register() {
               <option value="athlete">Athlete</option>
               <option value="recruiter">Recruiter</option>
             </select>
+          </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="firstName">First Name:</label><br></br>
+            <input
+              className="border"
+              type="text"
+              id="firstName"
+              required
+              onChange={(e) => handleChange("firstName", e.target.value)}
+            />
+          </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="lastName">Last Name:</label><br></br>
+            <input
+              className="border"
+              type="text"
+              id="lastName"
+              required
+              onChange={(e) => handleChange("lastName", e.target.value)}
+            />
+          </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="email">Email:</label><br></br>
+            <input
+              className="border"
+              type="text"
+              id="email"
+              required
+              onChange={(e) => {
+                let olduser = user;
+                olduser.email = e.target.value;
+                olduser.username = e.target.value;
+                setUser(olduser);
+              }}
+            />
+          </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="password">Password:</label><br></br>
+            <input
+              className="border"
+              type="password"
+              id="password"
+              required
+              onChange={(e) => handleChange("password", e.target.value)}
+            />
+          </div>
+          <div className="flex justify-between m-2 items-center space-x-2">
+            <label htmlFor="passwordConf">Confirm Password:</label><br></br>
+            <input
+              className="border"
+              type="password"
+              id="passwordConf"
+              required
+              onChange={(e) => handleChange("passwordConf", e.target.value)}
+            />
           </div>
           <div className="flex">
             <input

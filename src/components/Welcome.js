@@ -2,16 +2,17 @@ import Link from "next/link";
 import styles from "src/styles/welcome.module.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/navigation";
+import { Button } from "react-bootstrap";
 
 export default function Welcome() {
     const router = useRouter(); 
 
     const handleSignUp = () => {
-        router.push('src/pages/register'); 
+        router.push('src/pages/register/index.js'); 
     };
 
     const handleLogin = () => {
-        router.push('/src/pages/login'); 
+        router.push('/src/pages/login/index.js');
     };
     return (
         <div className="page-container">
@@ -27,8 +28,8 @@ export default function Welcome() {
                 </p>
             </div>
             <div className="button-container">
-                <button className="button" onClick={handleSignUp}>Sign up</button>
-                <button className="button" onClick={handleLogin}>Login</button>
+                <Link href={`/register`}>Text goes here</Link>
+                <Link href={`/login`}>Text goes here</Link>
             </div>
         </div>
     );
