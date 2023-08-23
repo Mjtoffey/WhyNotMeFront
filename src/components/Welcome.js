@@ -28,8 +28,8 @@ export default function Welcome() {
                 </p>
             </div>
             <div className="button-container">
-                <Link href={`/register`}>Text goes here</Link>
-                <Link href={`/login`}>Text goes here</Link>
+                <Button href={`/register`}>Register Here!</Button>
+                <Button href={`/login`}>Login</Button>
             </div>
         </div>
     );
