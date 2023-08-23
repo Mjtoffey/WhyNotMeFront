@@ -1,0 +1,28 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    border: 1px solid black;
+    /* Black border around the container */
+    padding: 20px;
+    /* Add some padding to the container */
+}
+
+.container {
+    text-align: center;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* Center the buttons horizontally */
+}
+
+.button {
+    /* Your button styles here */
+    margin: 0 10px;
+    /* Add some spacing between the buttons */
+}

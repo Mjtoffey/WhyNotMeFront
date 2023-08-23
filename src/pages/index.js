@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Navbar from "../components/Navbar"
+import Header from "src/components/Header.js";
+import Welcome from "../components/Welcome";
 
 export default function Page() {
-    return <div>
-      <h1>Home page JDH</h1>
-      <Link href="/welcome">Welcome</Link>
-      <Link href="/about">about</Link>
-      <Link href="../login/index.js">log in</Link>
-      <Link href="../register/index.js">register</Link>
-    </div>
-  }
+    return (
+        <div>
+            <Header />
+            <Navbar />
+            <Welcome />
+        </div>
+    );
+}

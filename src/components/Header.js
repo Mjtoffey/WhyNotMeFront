@@ -5,20 +5,15 @@ import { useGlobalState } from "../context/GlobalState";
 import { useRouter } from "next/navigation";
 
 function Header() {
-  const [state, dispatch] = useGlobalState();
-
   return (
-    <div>
-        <div>
-        <Image
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <Image 
           src="/white-bg-logo.png"
           width={500}
-          height={500}
+          height={350}
           alt="Why Not Me Recruiting logo"
         />
-        <h1>Why Not Me: Recruiting</h1>
-        </div>
-    </div>
+      </div>
   );
 }
 
