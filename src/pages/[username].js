@@ -5,10 +5,7 @@ const UserProfilePage = () => {
     const router = useRouter();
     const { username } = router.query;
 
-    // Dummy post data (replace with actual data)
     const userPosts = [
-        { id: 1, title: 'My First Post', content: 'This is my very first post!' },
-        { id: 2, title: 'Another Post', content: 'Just another post here.' },
     ];
 
     return (

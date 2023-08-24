@@ -14,7 +14,10 @@ function Register() {
     firstName: "",
     lastName: "",
     email: "",
-    userType: "athlete", // Default user type
+    userType: "",
+    sport: "",
+    social_media: "",
+    phone_nbr: "",
   });
 
   const handleChange = (key, value) => {
@@ -22,6 +25,14 @@ function Register() {
       ...user,
       [key]: value,
     });
+  };
+
+  const handleUserTypeChange = (event) => {
+    setUser({ ...user, userType: event.target.value });
+  };
+
+  const handleSportChange = (event) => {
+    setUser({ ...user, sport: event.target.value });
   };
 
   async function handleRegister(e) {
@@ -43,15 +54,10 @@ function Register() {
           {/* ...other input fields... */}
           <div className="flex justify-between m-2 items-center space-x-2">
             <label htmlFor="userType">User Type:</label>
-            <select
-              id="userType"
-              name="userType"
-              onChange={(e) => handleChange("userType", e.target.value)}
-              value={user.userType}
-              required
-            >
+            <select id="userType" name="userType" value={user.userType} onChange={handleUserTypeChange}>
+              <option value="">Select User Type</option>
               <option value="athlete">Athlete</option>
-              <option value="recruiter">Recruiter</option>
+              <option value="recruiter">recruiter</option>
             </select>
           </div>
           <div className="flex justify-between m-2 items-center space-x-2">
@@ -101,15 +107,10 @@ function Register() {
           </div>
           <div className="flex justify-between m-2 items-center space-x-2">
             <label htmlFor="sport">Sport:</label>
-            <select
-              id="sport"
-              name="sport"
-              onChange={(e) => handleChange("sport", e.target.value)}
-              value={user.sport}
-              required
-            >
-              <option value="soccer">Soccer</option>
+            <select id="sport" name="sport" value={user.sport} onChange={handleSportChange}>
+              <option value="">Select Sport</option>
               <option value="basketball">Basketball</option>
+              <option value="soccer">Soccer</option>
             </select>
           </div>
           <div className="flex justify-between m-2 items-center space-x-2">

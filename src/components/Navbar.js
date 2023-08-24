@@ -11,7 +11,7 @@ function CustomNavbar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="/Browse">Browse</Nav.Link>
+                        <Nav.Link href="src/pages/browse.js">Browse</Nav.Link>
                         <NavDropdown title="Sports" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Soccer</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Basketball</NavDropdown.Item>
