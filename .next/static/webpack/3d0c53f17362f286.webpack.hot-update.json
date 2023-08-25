@@ -1,0 +1,1 @@
+{"c":["pages/browsePage","webpack"],"r":["pages/[username]"],"m":["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=C%3A%5CUsers%5CMatthew%20Toffey%5CDocuments%5CGitHub%5CWhyNotMeFront%5Csrc%5Cpages%5C%5Busername%5D.js&page=%2F%5Busername%5D!","./node_modules/next/router.js","./src/pages/[username].js"]}
