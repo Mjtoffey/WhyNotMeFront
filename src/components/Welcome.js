@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 import { Button } from "react-bootstrap";
 
 export default function Welcome() {
-    const router = useRouter(); 
+    const router = useRouter();
 
     const handleSignUp = () => {
-        router.push('src/pages/register/index.js'); 
+        router.push('src/pages/register/index.js');
     };
 
     const handleLogin = () => {
@@ -28,8 +28,8 @@ export default function Welcome() {
                 </p>
             </div>
             <div className="button-container">
-                <Button href={`/register`}>Register Here!</Button>
-                <Button href={`/login`}>Login</Button>
+                <Button href={`/registerPage`}>Register Here!</Button>
+                <Button href={`/loginPage`}>Login</Button>
             </div>
         </div>
     );
