@@ -19,11 +19,11 @@ function CustomNavbar() {
     return (
         <div className="d-flex justify-content-center">
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="src/pages/index">Welcome</Navbar.Brand>
+                <Navbar.Brand href={`index`}>Welcome</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="src/pages/browsePage">Browse</Nav.Link>
+                        <Nav.Link href={`/browsePage`}>Browse</Nav.Link>
                     </Nav>
                     <Form inline className="d-flex">
                         <FormControl type="text" placeholder="Search" className="mr-sm-2" />
