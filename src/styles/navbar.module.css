@@ -1,38 +1,5 @@
-/* styles.css */
-/* Adjust body margin to remove default spacing */
-/* body {
-    margin: 0;
-} */
-.navbar-nav.nav-fill {
-    flex: 1;
-    justify-content: space-between;
-}
-
-/* Set the Navbar to span the entire width */
-.navbar {
-    width: 100%;
-}
-
-/* Center the Navbar content horizontally */
-.navbar .navbar-collapse {
-    justify-content: space-between;
-}
-
-/* Space out the Navbar links and form elements */
-.navbar-nav {
-    width: 100%;
+.navbarContainer {
     display: flex;
-    justify-content: space-between;
-    /* Push the NavDropdown and Search Form to the right */
-}
-
-.navbar-nav .nav-link {
-    margin-right: 10px;
-    /* Adjust the spacing between links */
-}
-
-/* Center the Search Form vertically */
-.navbar form {
-    display: flex;
-    align-items: center;
+    justify-content: center;
+    max-width: 100%;
 }

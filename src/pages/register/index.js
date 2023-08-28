@@ -10,15 +10,15 @@ function Register() {
   const [user, setUser] = useState({
     password: "",
     passwordConf: "",
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
     username: "",
-    schoolId: "",       // New input field for school_id
-    phoneNbr: "",       // New input field for phone_nbr
-    socialMedia: "",    // New input field for social_media
-    sport: "",          // New input field for sport
-    player: false,      // New input field for player
+    school: "",
+    phone_nbr: "",
+    social_media: "",
+    sport: "",
+    athlete: false,
   });
 
   const handleChange = (key, value) => {
@@ -27,8 +27,18 @@ function Register() {
       [key]: value,
     });
   };
-
+  console.log(user);
+  // async function handleRegister(e) {
+  //   e.preventDefault();
+  //   AuthService.register(user);
+  //   dispatch({
+  //     currentUserToken: state.currentUserToken,
+  //     currentUser: state.currentUser?.user_id,
+  //   });
+  //   router.push("/user-profile");
+  // }
   async function handleRegister(e) {
+    console.log(user)
     e.preventDefault();
     try {
       await AuthService.register(user);
@@ -64,7 +74,7 @@ function Register() {
                 type="text"
                 id="firstName"
                 required
-                onChange={(e) => handleChange("firstName", e.target.value)}
+                onChange={(e) => handleChange("first_name", e.target.value)}
               />
             </div>
             <div className="flex justify-between m-2 items-center space-x-2">
@@ -74,7 +84,7 @@ function Register() {
                 type="text"
                 id="lastName"
                 required
-                onChange={(e) => handleChange("lastName", e.target.value)}
+                onChange={(e) => handleChange("last_name", e.target.value)}
               />
             </div>
             <div className="flex justify-between m-2 items-center space-x-2">
@@ -129,7 +139,7 @@ function Register() {
                 type="text"
                 id="phoneNbr"
                 required
-                onChange={(e) => handleChange("phoneNbr", e.target.value)}
+                onChange={(e) => handleChange("phone_nbr", e.target.value)}
               />
             </div>
             <div className="flex justify-between m-2 items-center space-x-2">
@@ -139,7 +149,7 @@ function Register() {
                 type="text"
                 id="socialMedia"
                 required
-                onChange={(e) => handleChange("socialMedia", e.target.value)}
+                onChange={(e) => handleChange("social_media", e.target.value)}
               />
             </div>
             <div className="flex justify-between m-2 items-center space-x-2">
@@ -153,12 +163,12 @@ function Register() {
               />
             </div>
             <div className="flex justify-between m-2 items-center space-x-2">
-              <label htmlFor="player">Player:</label><br />
+              <label htmlFor="athlete">Athlete:</label><br />
               <input
                 className="border"
                 type="checkbox"
-                id="player"
-                onChange={(e) => handleChange("player", e.target.checked)}
+                id="athlete"
+                onChange={(e) => handleChange("athlete", e.target.checked)}
               />
             </div>
             <div className="flex">
@@ -170,8 +180,8 @@ function Register() {
                   user.password &&
                     user.password.length >= 8 &&
                     user.password === user.passwordConf &&
-                    user.firstName &&
-                    user.lastName &&
+                    user.first_name &&
+                    user.last_name &&
                     user.email
                     ? false
                     : true

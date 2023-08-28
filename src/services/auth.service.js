@@ -29,26 +29,28 @@ class AuthService {
   logout() {
     localStorage.removeItem('user');
   }
-  async register({
-    username,
-    email,
-    password,
-    firstName,
-    lastName,
-    image
-  }) {
+  async register(
+    user,
+    // email,
+    // password,
+    // firstName,
+    // lastName,
+    // image
+  ) {
     try {
+      console.log(user)
       await request({
         url: REGISTER_ENDPOINT,
         method: 'POST',
-        data: {
-          username,
-          email,
-          password,
-          first_name: firstName,
-          last_name: lastName,
-          image
-        },
+        data: user
+        // data: {
+        //   username,
+        //   email,
+        //   password,
+        //   first_name: firstName,
+        //   last_name: lastName,
+        //   image
+        // },
       });
       await this.login(email, password, username);
     } catch (error) {

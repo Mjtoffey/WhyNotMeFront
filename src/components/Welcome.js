@@ -17,24 +17,16 @@ export default function Welcome() {
         router.push('/src/pages/login/index.js');
     };
     return (
-        <div className="page-container">
-            <div className="container">
-                <p>
-                    Welcome to Why Not Me: Recruiting
-                </p>
-                <p>
-                    This platform will allow student athletes to be connected to recruiters around the United States.
-                </p>
-                <p>
-                    Once you have made your profile and customised your "games" your profile will be ready for recruiters to view and get into contact with you!
-                </p>
+        <div className={styles.pageContainer}>
+            <div className={styles.cardContainer}>
+                <h1>Welcome to Why Not Me: Recruiting</h1>
+                <p>A platform designed around students athletes to help them connect to recruiters by making them the center of attention! </p>
+                <p>Student athletes will be able to make a profile, and upload a "game" this game will have you fill out stats, and post the game to your profile so users all around the world can see the progess you make in games and gives tangible results.</p>
+                <p>As you make progress recruiters will be able to see your contact information and reach out as they see your growth and the value that you bring to your teams.</p>
             </div>
-            <div className="button-container">
-                <Button href={`/registerPage`}>Register Here!</Button>
+            <div className={styles.buttonContainer}>
+                <Button href={`/register`}>Register Here!</Button>
                 <Button href={`/login`}>Login</Button>
-                <Link href="/GameForm">
-                    <Button className={styles.addButton}>Add Game</Button>
-                </Link>
             </div>
         </div>
     );
