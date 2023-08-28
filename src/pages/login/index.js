@@ -5,6 +5,7 @@ import authService from '../../services/auth.service';
 import jwtDecode from 'jwt-decode';
 import Link from 'next/link';
 import CustomNavbar from '../../components/Navbar';
+import Header from "src/components/Header.js";
 
 function Page() {
     const router = useRouter();
@@ -25,7 +26,7 @@ function Page() {
                         type: 'SET_USER',
                         payload: data,
                     });
-                    router.push('/');
+                    router.push('/user-profile');
                 } else {
                     console.log('Login failed');
                     dispatch({ type: 'LOGOUT_USER' });
@@ -36,6 +37,7 @@ function Page() {
     return (
         <div>
             <div>
+                <Header />
                 <CustomNavbar />
                 <h1 className='text-center'>Login</h1>
                 <div className='flex text-center'>

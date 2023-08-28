@@ -4,7 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useRouter } from "next/navigation";
 import { Button } from "react-bootstrap";
 
+
 export default function Welcome() {
+
     const router = useRouter();
 
     const handleSignUp = () => {
@@ -29,7 +31,7 @@ export default function Welcome() {
             </div>
             <div className="button-container">
                 <Button href={`/registerPage`}>Register Here!</Button>
-                <Button href={`/loginPage`}>Login</Button>
+                <Button href={`/login`}>Login</Button>
             </div>
         </div>
     );

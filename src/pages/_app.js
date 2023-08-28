@@ -1,4 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { GlobalStateProvider } from '../context/GlobalState';
+
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -6,6 +8,6 @@ function MyApp({ Component, pageProps }) {
       <div><Component {...pageProps} /></div>
     </GlobalStateProvider>
   );
-  return ;
+  return;
 }
 export default MyApp;

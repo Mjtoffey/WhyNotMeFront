@@ -36,7 +36,7 @@ function Register() {
           type: 'SET_USER',
           payload: data,
         });
-        router.push('/');
+        router.push('/user-profile');
       } else {
         console.log('Login after registration failed');
         dispatch({ type: 'LOGOUT_USER' });

@@ -1,0 +1,21 @@
+/* welcome.module.css */
+
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.profileContent {
+    text-align: center;
+    padding: 20px;
+}
+
+.editButton {
+    margin-top: 10px;
+}
+
+.addButton {
+    margin-top: 10px;
+}

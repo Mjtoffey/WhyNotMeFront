@@ -3,6 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/login": "pages/login.js",
-  "/browsePage": "pages/browsePage.js"
+  "/browsePage": "pages/browsePage.js",
+  "/user-profile": "pages/user-profile.js",
+  "/registerPage": "pages/registerPage.js",
+  "/login": "pages/login.js"
 }

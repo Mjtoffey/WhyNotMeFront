@@ -19,7 +19,7 @@ function CustomNavbar() {
     return (
         <div className="d-flex justify-content-center">
             <Navbar bg="light" expand="lg">
-                <Navbar.Brand href={`index`}>Welcome</Navbar.Brand>
+                <Navbar.Brand href="/">Welcome</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
@@ -31,15 +31,15 @@ function CustomNavbar() {
                     </Form>
                     <Nav>
                         {state.user ? (
-                            <Nav.Link href="/profile">
-                                <FontAwesomeIcon icon={faUser} style={{ color: "#feffff" }} />
-                            </Nav.Link>
-                        ) : null}
-                        {state.user ? (
                             <Nav.Link className="p-3 justify-content-end" onClick={handleLogout}>Logout</Nav.Link>
                         ) : (
                             <Nav.Link className="p-3 justify-content-end" href={`/login`}>Login</Nav.Link>
                         )}
+                        {state.user ? (
+                            <Nav.Link href={`/user-profile`}>
+                                <FontAwesomeIcon icon={faUser} style={{ color: "black" }} />
+                            </Nav.Link>
+                        ) : null}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
