@@ -27,42 +27,28 @@ export default function UserProfile({ user, games }) {
         };
         getUserFromLocalStorage();
     }, []);
-    if (!user) {
-        return <div>Loading...</div>;
-    }
 
-    const isCurrentUserProfile = state.user && state.user.id === user.id;
+
+    // const isCurrentUserProfile = state.user && state.user.id === user.id;
 
     return (
         <div className={styles.profileContainer}>
             <Header />
             <Navbar />
             <Head>
-                <title>{user.first_name}'s Profile</title>
+                {/* <title>{state.user.first_name}'s Profile</title> */}
             </Head>
             <div className={styles.profileContent}>
-                <h1>{user.first_name}'s Profile</h1>
-                <p>First Name: {user.first_name}</p>
-                <p>Last Name: {user.last_name}</p>
-                <p>School: {user.school}</p>
-                <p>Social Media: {user.social_media}</p>
-                <p>Email: {user.email}</p>
-                <p>Sport: {user.sport}</p>
-                <p>User Type: {user.player ? "Player" : "Non-Player"}</p>
+                <h1>Matt's Profile</h1>
+                <p>First Name: Matt</p>
+                <p>Last Name: Toff</p>
+                <p>School: TCHS</p>
+                <p>Social Media: mtoff</p>
+                <p>Email: mjtoffey</p>
+                <p>Sport: soccer</p>
+                <p>User Type: Athlete</p>
 
-                {isCurrentUserProfile && (
-                    <>
-                        {/* Link to Edit Profile */}
-                        <Link href="/edit-profile">
-                            <Button className={styles.editButton}>Edit Profile</Button>
-                        </Link>
 
-                        {/* Link to Add Game Form */}
-                        <Link href="/GameForm">
-                            <Button className={styles.addButton}>Add Game</Button>
-                        </Link>
-                    </>
-                )}
 
                 {/* Display Game Objects */}
                 {Array.isArray(games) && games.length > 0 ? (

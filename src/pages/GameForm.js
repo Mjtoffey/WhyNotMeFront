@@ -6,11 +6,12 @@ import Navbar from "../components/Navbar"
 import Header from "src/components/Header.js";
 import styles from "src/styles/GameForm.module.css"
 import API_URL from 'src/services/auth.constants.js';
+import Axios from "axios";
 
 const GameForm = () => {
     const { state, dispatch } = useGlobalState();
     const [formData, setFormData] = useState({
-        // user_id: state.user.user_id,
+        user: '',
         title: '',
         points: '',
         rebounds: '',
@@ -35,23 +36,44 @@ const GameForm = () => {
         };
         getUserFromLocalStorage();
     }, []);
+    const handleChange = (key, value) => {
+        setFormData({
+            ...formData,
+            [key]: value,
+        });
+    };
 
     const handleSubmit = async (e) => {
         console.log(formData)
         e.preventDefault();
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/games/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ formData }),
-                user: state.user.user_id,
+            Axios({
+                method: 'post',
+                url: 'http://127.0.0.1:8000/api/games/',
+                data: {
+                    title: formData.title,
+                    user: state.user.user_id,
+                    points: formData.points,
+                    rebounds: formData.rebounds,
+                    blocks: formData.blocks,
+                    steals: formData.steals,
+                    assists: formData.assists,
+                    saves: formData.saves,
+                    min_played: formData.min_played,
+                }
             });
+            // const response = await fetch('http://127.0.0.1:8000/api/games/', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({ formData }),
+            //     user: state.user.user_id,
+            // });
 
-            const data = await response.json();
-            console.log(data); // Display success or error message
+            // const data = await response.json();
+            // console.log(data); // Display success or error message
         } catch (error) {
             console.error('Error:', error);
         }
@@ -67,55 +89,55 @@ const GameForm = () => {
                         name="title"
                         placeholder="Title"
                         required
-                        onChange={(e) => setFormData({ title: e.target.value })}
+                        onChange={(e) => handleChange('title', e.target.value)}
                     />
                     <input
                         type="int"
                         name="points"
                         placeholder="Points"
                         required
-                        onChange={(e) => setFormData({ points: e.target.value })}
+                        onChange={(e) => handleChange('points', e.target.value)}
                     />
                     <input
                         type="text"
                         name="rebounds"
                         placeholder="Rebounds"
                         required
-                        onChange={(e) => setFormData({ rebounds: e.target.value })}
+                        onChange={(e) => handleChange('rebounds', e.target.value)}
                     />
                     <input
                         type="text"
                         name="blocks"
                         placeholder="Blocks"
                         required
-                        onChange={(e) => setFormData({ blocks: e.target.value })}
+                        onChange={(e) => handleChange('blocks', e.target.value)}
                     />
                     <input
                         type="text"
                         name="steals"
                         placeholder="Steals"
                         required
-                        onChange={(e) => setFormData({ steals: e.target.value })}
+                        onChange={(e) => handleChange('steals', e.target.value)}
                     />
                     <input
                         type="text"
                         name="assists"
                         placeholder="Assists"
                         required
-                        onChange={(e) => setFormData({ assists: e.target.value })}
+                        onChange={(e) => handleChange('assists', e.target.value)}
                     /><input
                         type="text"
                         name="saves"
                         placeholder="Saves"
                         required
-                        onChange={(e) => setFormData({ saves: e.target.value })}
+                        onChange={(e) => handleChange('saves', e.target.value)}
                     />
                     <input
                         type="text"
                         name="min_played"
                         placeholder="Minutes Played"
                         required
-                        onChange={(e) => setFormData({ min_played: e.target.value })}
+                        onChange={(e) => handleChange('min_played', e.target.value)}
                     />
                     <button type="submit">Submit Game</button>
                 </form>
