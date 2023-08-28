@@ -1,4 +1,4 @@
-import React, { useEffect, useState, } from "react";
+import React, { useEffect, useState } from "react";
 import AuthService from "../../services/auth.service";
 import { useRouter } from "next/navigation";
 import { useGlobalState } from "../../context/GlobalState";
@@ -14,6 +14,11 @@ function Register() {
     lastName: "",
     email: "",
     username: "",
+    schoolId: "",       // New input field for school_id
+    phoneNbr: "",       // New input field for phone_nbr
+    socialMedia: "",    // New input field for social_media
+    sport: "",          // New input field for sport
+    player: false,      // New input field for player
   });
 
   const handleChange = (key, value) => {
@@ -105,6 +110,55 @@ function Register() {
                 id="passwordConf"
                 required
                 onChange={(e) => handleChange("passwordConf", e.target.value)}
+              />
+            </div>
+            <div className="flex justify-between m-2 items-center space-x-2">
+              <label htmlFor="school">School:</label><br />
+              <input
+                className="border"
+                type="text"
+                id="school"
+                required
+                onChange={(e) => handleChange("school", e.target.value)}
+              />
+            </div>
+            <div className="flex justify-between m-2 items-center space-x-2">
+              <label htmlFor="phoneNbr">Phone Number:</label><br />
+              <input
+                className="border"
+                type="text"
+                id="phoneNbr"
+                required
+                onChange={(e) => handleChange("phoneNbr", e.target.value)}
+              />
+            </div>
+            <div className="flex justify-between m-2 items-center space-x-2">
+              <label htmlFor="socialMedia">Social Media:</label><br />
+              <input
+                className="border"
+                type="text"
+                id="socialMedia"
+                required
+                onChange={(e) => handleChange("socialMedia", e.target.value)}
+              />
+            </div>
+            <div className="flex justify-between m-2 items-center space-x-2">
+              <label htmlFor="sport">Sport:</label><br />
+              <input
+                className="border"
+                type="text"
+                id="sport"
+                required
+                onChange={(e) => handleChange("sport", e.target.value)}
+              />
+            </div>
+            <div className="flex justify-between m-2 items-center space-x-2">
+              <label htmlFor="player">Player:</label><br />
+              <input
+                className="border"
+                type="checkbox"
+                id="player"
+                onChange={(e) => handleChange("player", e.target.checked)}
               />
             </div>
             <div className="flex">

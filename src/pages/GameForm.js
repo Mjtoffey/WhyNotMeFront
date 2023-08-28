@@ -36,7 +36,7 @@ const GameForm = () => {
     }, []);
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+        event.preventDefault();
 
         try {
             const response = await fetch('/api/games', {
@@ -64,56 +64,56 @@ const GameForm = () => {
                         type="text"
                         name="title"
                         placeholder="Title"
-                        value={formData.title}
-                        onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                        required
+                        onChange={(e) => handleSubmit({ title: e.target.value })}
                     />
                     <input
                         type="int"
                         name="points"
                         placeholder="Points"
-                        value={formData.points}
-                        onChange={(e) => setFormData({ ...formData, points: e.target.value })}
+                        required
+                        onChange={(e) => handleSubmit({ points: e.target.value })}
                     />
                     <input
                         type="text"
                         name="rebounds"
                         placeholder="Rebounds"
-                        value={formData.rebounds}
-                        onChange={(e) => setFormData({ ...formData, rebounds: e.target.value })}
+                        required
+                        onChange={(e) => handleSubmit({ rebounds: e.target.value })}
                     />
                     <input
                         type="text"
                         name="blocks"
                         placeholder="Blocks"
-                        value={formData.blocks}
-                        onChange={(e) => setFormData({ ...formData, blocks: e.target.value })}
+                        required
+                        onChange={(e) => handleSubmit({ blocks: e.target.value })}
                     />
                     <input
                         type="text"
                         name="steals"
                         placeholder="Steals"
-                        value={formData.steals}
-                        onChange={(e) => setFormData({ ...formData, steals: e.target.value })}
+                        required
+                        onChange={(e) => handleSubmit({ steals: e.target.value })}
                     />
                     <input
                         type="text"
                         name="assists"
                         placeholder="Assists"
-                        value={formData.assists}
-                        onChange={(e) => setFormData({ ...formData, assists: e.target.value })}
+                        required
+                        onChange={(e) => handleSubmit({ assists: e.target.value })}
                     /><input
                         type="text"
                         name="saves"
                         placeholder="Saves"
-                        value={formData.saves}
-                        onChange={(e) => setFormData({ ...formData, saves: e.target.value })}
+                        required
+                        onChange={(e) => handleSubmit({ saves: e.target.value })}
                     />
                     <input
                         type="text"
                         name="min_played"
                         placeholder="Minutes Played"
-                        value={formData.min_played}
-                        onChange={(e) => setFormData({ ...formData, min_played: e.target.value })}
+                        required
+                        onChange={(e) => handleSubmit({ min_played: e.target.value })}
                     />
                     {/* Other input fields for game data */}
                     <button type="submit">Submit Game</button>

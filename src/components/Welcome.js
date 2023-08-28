@@ -32,6 +32,9 @@ export default function Welcome() {
             <div className="button-container">
                 <Button href={`/registerPage`}>Register Here!</Button>
                 <Button href={`/login`}>Login</Button>
+                <Link href="/GameForm">
+                    <Button className={styles.addButton}>Add Game</Button>
+                </Link>
             </div>
         </div>
     );
